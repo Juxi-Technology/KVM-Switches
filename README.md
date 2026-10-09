@@ -1,52 +1,76 @@
-# KVM-Switches
+English | [简体中文](README_CN.md)
 
-The KVM switch includes HUB functionality, TTL serial port, and Bluetooth module 
+# KVM Switch with USB HUB, TTL Serial Port and Bluetooth
 
-<img width="574" height="414" alt="image" src="https://github.com/user-attachments/assets/6f6d43f9-cf21-4c6b-af47-846b88656313" />
+A desktop KVM switch that also bundles a USB HUB, a TTL serial port and a Bluetooth module on one board — silkscreened **KVM&HUB&TTL**.
 
-## Individual module functionality
+It switches between **two host PCs (PC1 / PC2)** from the front-panel button or the included infrared remote.
 
-### 1. HUB Function
+![KVM switch function layout](KVM-Switch-Tutorial/en/images/KVM切换器功能分布.png)
 
-A single USB-TypeC cable can expand one USB port into three USB ports 
+## Features
 
-<img width="575" height="386" alt="image" src="https://github.com/user-attachments/assets/c1f15ee3-c515-43ec-b948-6632deb71de2" />
+| Item | Detail |
+|------|--------|
+| Hosts | 2 (PC1 / PC2) |
+| Switching | Front-panel button, infrared remote control |
+| USB HUB | One USB Type-C input expands to three USB ports |
+| TTL serial port | Pins left to right: `GND  RXD  TXD  TNOW  3V3  5V` |
+| Bluetooth module | Connect over AT commands, or switch it to slave mode (Bluetooth 4.2) |
+| Indicators | Power, PC1, PC2, UART |
+
+## Modules
+
+### 1. USB HUB
+
+A single USB Type-C cable expands one USB port into three.
+
+![USB HUB one-to-three](KVM-Switch-Tutorial/en/images/KVM切换器%20一分三.png)
 
 ### 2. TTL Serial Port
 
-The pins from left to right are GND, RXD, TXD, TNOW, 3V3, and 5V, respectively. 
-
-<img width="769" height="551" alt="image" src="https://github.com/user-attachments/assets/04bf9910-07bd-49b5-804d-eb2235827746" />
+![TTL serial port pins](KVM-Switch-Tutorial/en/images/截图_20260316104812.png)
 
 ### 3. Bluetooth Module
 
-<img width="761" height="524" alt="image" src="https://github.com/user-attachments/assets/351310c3-b529-48dc-9419-babce731c9a9" />
+![Bluetooth module](KVM-Switch-Tutorial/en/images/截图_20260316105733.png)
 
-Connect using AT commands, or change to slave mode, and the phone must connect via the 4.2 protocol 
+## Dual-End Switching
 
-## Double-ended switching
+### 1. Two devices, both with monitors
 
-### 1. Device A + Device B (both ends have monitors)
+Switch with the button or the infrared remote.
 
-Button Switch & Infrared Remote Control Switch
+![Button and IR remote switching](KVM-Switch-Tutorial/en/images/KVM切换器.png)
 
-<img width="1149" height="504" alt="image" src="https://github.com/user-attachments/assets/47dcba7b-3a5f-4024-8773-0fbadc6d63bd" />
+### 2. Mainboard (no monitor) + host (with monitor)
 
-### 2. Motherboard (without monitor) + Host (with monitor)
+Add a 4K HD HDMI capture card on the host side and use OBS or PotPlayer **on the host** to capture the screen of the **monitor-less mainboard**.
 
-Only need toadditionallyuse a 4K HD HDMI capture device connected to the host, and then**on the host**use software such as OBS and Potplay to capture**the motherboard (without a monitor)**screen
+![Capture card wiring](KVM-Switch-Tutorial/en/images/KVM切换器%20%281%29.png)
 
-<img width="572" height="441" alt="image" src="https://github.com/user-attachments/assets/0ea4799c-4274-4591-890d-54566725af7a" />
-<img width="497" height="383" alt="image" src="https://github.com/user-attachments/assets/ab8bd898-fd8c-4266-9ae7-01bfe621dbee" />
+The full wiring options (HDMI / Micro HDMI / DP) and the OBS and PotPlayer walkthroughs are in the tutorial.
 
-**4K HD HDMI Capture Device Wiring Operation**
+## Language
 
-According to the motherboard interface, there are the following three wiring operations 
+| Language | Folder |
+|----------|--------|
+| English | [`en/`](KVM-Switch-Tutorial/en/) |
+| Deutsch | [`de/`](KVM-Switch-Tutorial/de/) |
+| Español | [`es/`](KVM-Switch-Tutorial/es/) |
+| Français | [`fr/`](KVM-Switch-Tutorial/fr/) |
+| Italiano | [`it/`](KVM-Switch-Tutorial/it/) |
+| 日本語 | [`ja/`](KVM-Switch-Tutorial/ja/) |
+| 한국어 | [`ko/`](KVM-Switch-Tutorial/ko/) |
+| Português (BR) | [`pt-br/`](KVM-Switch-Tutorial/pt-br/) |
+| Português (PT) | [`pt-pt/`](KVM-Switch-Tutorial/pt-pt/) |
+| 简体中文 | [`zh-hans/`](KVM-Switch-Tutorial/zh-hans/) |
+| 繁體中文 | [`zh-hant/`](KVM-Switch-Tutorial/zh-hant/) |
 
-**HDMI Interface** ——> HDMI Cable ——> HDMI Interface of the Collector ——> USB/Type-C ——> Displays such as Laptops, Computers, All in One, Phones/Tablets, etc.
+## Tutorial
 
-**Micro HAMI Interface** ——> Micro to HDMI Adapter ——> HDMI Cable ——> HDMI Interface of the Collector ——> USB/Type-C ——> Displays such as Laptops, Computers, All in One, Phones/Tablets, etc.
+| English | 中文 |
+|---------|------|
+| [KVM Switch Tutorial](KVM-Switch-Tutorial/en/kvm-switch-tutorial.md) | [KVM 切换器使用教程](KVM-Switch-Tutorial/zh-hans/kvm-switch-tutorial.md) |
 
-**DP Interface** ——> DP to HDMI Adapter ——> HDMI Cable ——> HDMI Interface of the Collector ——> USB/Type-C ——> Displays such as Laptops, Computers, All in One, Phones/Tablets, etc.
-
-<img width="556" height="493" alt="image" src="https://github.com/user-attachments/assets/376ca64a-f2d0-4906-8539-012f3f05f675" />
+Images are stored **only** under `KVM-Switch-Tutorial/en/images/`; every other language links to that one copy. Each tutorial page carries a language switcher on its first line.
